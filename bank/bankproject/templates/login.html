@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>register</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+</head>
+<body>
+<section class="testimonial py-5" id="testimonial">
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-4 py-5 bg-primary text-white text-center ">
+                <div class=" ">
+                    <div class="card-body">
+                        <img src="http://www.ansonika.com/mavia/img/registration_bg.svg" style="width:30%">
+                        <h2 class="py-3">Login</h2>
+                        <p>Tation argumentum et usu, dicit viderer evertitur te has. Eu dictas concludaturque usu, facete detracto patrioque an per, lucilius pertinacia eu vel.
+
+</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 py-5 border">
+                <h4 class="pb-4">Please fill with your details</h4>
+                <form action="login" method="post">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <input  name="username" placeholder="User Name" class="form-control" type="text">
+                        </div>
+
+                      </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <input type="password" name="password" placeholder="password" class="form-control" required="required" >
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-row">
+                        <input type="submit" class="btn btn-primary">
+                    </div>
+                </form>
+                {% for msg in messages %}
+                   {{msg}}
+                {% endfor %}
+                <a href ="{% url 'credentials:register' %}">Register</a><br>
+                <a href ="{% url 'bankapp:getdata' %}">Create Account</a><br>
+                <a href="{% url 'bankapp:index' %}">Return to Home</a>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+</html>
